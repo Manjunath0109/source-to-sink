@@ -1,0 +1,157 @@
+.org-tree {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 8px 16px;
+  width: 300px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+/* Tree Structure */
+.tree {
+  display: flex;
+  justify-content: center;
+}
+
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.node-content {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  min-width: 200px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.node-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.node-content.highlighted {
+  border-color: #2196f3;
+  background: #e3f2fd;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.expand-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-size: 18px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.expand-icon:hover {
+  background: #f5f5f5;
+  border-color: #2196f3;
+}
+
+.node-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.node-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.node-title {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Tree Connections */
+.tree-children {
+  display: flex;
+  gap: 40px;
+  padding-top: 20px;
+  position: relative;
+}
+
+.tree-children::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #e0e0e0;
+}
+
+.tree-child {
+  position: relative;
+}
+
+.tree-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #e0e0e0;
+}
+
+.tree-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.tree-child:first-child::after {
+  right: 0;
+  border-left: 2px solid #e0e0e0;
+  border-top-left-radius: 8px;
+}
+
+.tree-child:last-child::after {
+  left: 0;
+  border-right: 2px solid #e0e0e0;
+  border-top-right-radius: 8px;
+}
+
+.tree-child:only-child::after {
+  left: 50%;
+  border-right: none;
+  width: 0;
+}
